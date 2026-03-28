@@ -3,15 +3,13 @@ package model;
 import java.util.Objects;
 
 public class Room {
-    private static int nextId = 1;
     private int id;
-    private String roomNumber;
+    private int roomNumber;
     private String type; // Одноместный, Двухместный, Люкс, Полулюкс
     private String status; // Свободен, Занят, На уборке
     private double pricePerNight; // Стоимость
 
-    public Room(String roomNumber, String type, double pricePerNight) {
-        this.id = nextId++;
+    public Room(int roomNumber, String type, double pricePerNight) {
         this.roomNumber = roomNumber;
         this.type = type;
         this.pricePerNight = pricePerNight;
@@ -21,7 +19,7 @@ public class Room {
         return id;
     }
 
-    public String getRoomNumber() {
+    public int getRoomNumber() {
         return roomNumber;
     }
 
@@ -37,11 +35,11 @@ public class Room {
         return pricePerNight;
     }
 
-    public static void setNextId(int nextId) {
-        Room.nextId = nextId;
+    public void setId(int Id) {
+        this.id = Id;
     }
 
-    public void setRoomNumber(String roomNumber) {
+    public void setRoomNumber(int roomNumber) {
         this.roomNumber = roomNumber;
     }
 
@@ -55,6 +53,13 @@ public class Room {
 
     public void setPricePerNight(double pricePerNight) {
         this.pricePerNight = pricePerNight;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format(
+                "ID: %-3d | Номер: %-4d | Тип: %-12s | Статус: %-8s | Цена: %8.2f руб \n", id, roomNumber, type, status, pricePerNight);
     }
 
     @Override
