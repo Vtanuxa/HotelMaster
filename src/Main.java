@@ -15,6 +15,7 @@ public class Main {
         while (true){
             printMainMenu();
             int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice){
                 case 1:
                     manageRooms();
@@ -33,7 +34,6 @@ public class Main {
         System.out.println("║  2. 👤 Управление клиентами           ║");
         System.out.println("║  3. 📅 Управление бронированием       ║");
         System.out.println("║  4. 🔍 Поиск                          ║");
-        System.out.println("║  5. 📊 Статистика                     ║");
         System.out.println("║  0. 🚪 Выход                          ║");
         System.out.println("╚═══════════════════════════════════════╝");
         System.out.print("👉 Выберите опцию: ");
@@ -46,7 +46,7 @@ public class Main {
             System.out.println("╠═══════════════════════════════════════╣");
             System.out.println("║  1. 📋 Показать все номера            ║");
             System.out.println("║  2. ➕ Добавить номер                 ║");
-            System.out.println("║  3. ✏️  Редактировать номер           ║");
+            System.out.println("║  3. ✏️ Редактировать номер            ║");
             System.out.println("║  4. ❌ Удалить номер                  ║");
             System.out.println("║  5. 🔍 Найти номер по ID              ║");
             System.out.println("║  6. 🔢 Найти номер по № комнаты       ║");
@@ -60,7 +60,7 @@ public class Main {
                     roomService.printAllRooms();
                     break;
                 case 2:
-                    roomService.addRoom("11", "Одноместный",10000);
+                    roomService.addRoom();
                     break;
                 case 3:
                     roomService.updateRoom();
@@ -68,6 +68,7 @@ public class Main {
                     roomService.deleteRoom();
                 case 5:
                     roomService.findRoomById();
+                    break;
                 case 6:
                     roomService.findRoomByNumber();
                 case 0:
@@ -88,10 +89,7 @@ public class Main {
 //            System.out.println("║  3. ✏️  Редактировать клиента          ║");
 //            System.out.println("║  4. ❌ Удалить клиента                 ║");
 //            System.out.println("║  5. 🔍 Найти по ID                     ║");
-//            System.out.println("║  6. 🔍 Найти по email                  ║");
-//            System.out.println("║  7. 🔍 Найти по телефону               ║");
-//            System.out.println("║  8. 🔍 Найти по имени                  ║");
-//            System.out.println("║  9. 📊 Статистика                      ║");
+//            System.out.println("║  6. 🔍 Найти по имени                  ║");
 //            System.out.println("║  0. 🔙 Назад                           ║");
 //            System.out.println("╚═══════════════════════════════════════╝");
 //            System.out.print("👉 Выберите опцию: ");
@@ -115,16 +113,7 @@ public class Main {
 //                    clientService.findClientById();
 //                    break;
 //                case 6:
-//                    clientService.findClientByEmail();
-//                    break;
-//                case 7:
-//                    clientService.findClientByPhone();
-//                    break;
-//                case 8:
 //                    clientService.findClientsByName();
-//                    break;
-//                case 9:
-//                    clientService.printClientStatistics();
 //                    break;
 //                case 0:
 //                    System.out.println("🔙 Возврат в главное меню...");

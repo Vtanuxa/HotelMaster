@@ -1,19 +1,39 @@
 package repository;
 
+import connection.DBConnection;
 import model.Booking;
 import model.Client;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static connection.DBConnection.connection;
+
 public class BookingRepository {
     private List<Booking> bookings = new ArrayList<>();
 
-    public Booking save(Booking booking) {
-        bookings.add(booking);
-        return booking;
-    }
+//    public Booking save(Booking booking) {
+//
+//        String saveBooking = "INSERT INTO bookings VALUES (client, room, checkInDate, checkOutDate, guestCount, totalPrice, status) VALUES (?, ?, ?, ?, ?, ?, ?)";
+//        try {
+//            Connection connection = connection();
+//            PreparedStatement preparedStatement = connection.prepareStatement(saveBooking);
+//            preparedStatement.setInt(1, booking.getClient().getId));
+//            preparedStatement.setInt(2, booking.getRoom());
+//            preparedStatement.setDate(3, booking.getCheckInDate());
+//            preparedStatement.setDate();
+//
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//        return booking;
+//    }
 
     public Optional<Booking> findById(int id) {
         return bookings.stream()

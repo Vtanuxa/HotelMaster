@@ -12,10 +12,10 @@ public class ClientService {
     }
 
     public Client addClient(String fullName, String email, String phone) {
-        if (clientRepository.findByEmail(email).isPresent()) {
-            System.out.println("❌ Ошибка: Клиент с email " + email + " уже существует!");
-            return null;
-        }
+//        if (clientRepository.findByEmail(email).isPresent()) {
+//            System.out.println("❌ Ошибка: Клиент с email " + email + " уже существует!");
+//            return null;
+//        }
         Client client = new Client();
         return clientRepository.save(client);
 //

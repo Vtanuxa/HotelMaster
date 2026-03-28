@@ -1,7 +1,6 @@
 package model;
 
 public class Client {
-    public static int nextId = 1;
 
     private int id;
     private String fullName;
@@ -10,7 +9,7 @@ public class Client {
     private String passport;
 
     public Client(String fullName, String phone, String email, String passport) {
-        this.id = nextId++;
+
         this.fullName = fullName;
         this.phone = phone;
         this.email = email;
