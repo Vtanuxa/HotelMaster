@@ -38,27 +38,27 @@ public class RoomService {
         return newRoom;
     }
 
-    public void printAllRooms() {
+    public void AllRooms() {
         List<Room> rooms = roomRepository.findAll();
 
-        if (roomRepository.findAll().isEmpty()) {
+        if (rooms.isEmpty()) {
             System.out.println("Список номеров пуст");
             return;
         }
 
-        System.out.println("\n┌────┬────────────┬──────────────────┬─────────────┐");
-        System.out.println("│ ID │ Номер комн.│ Тип              │ Цена за ночь│");
-        System.out.println("├────┼────────────┼──────────────────┼─────────────┤");
+        System.out.println("\nID | Номер | Тип | Цена | Статус");
+        System.out.println("----------------------------------------");
 
         for (Room room : rooms) {
-            System.out.printf("│ %-2d │ %-10s │ %-16s │ %11.2f ₽ │%n",
+            System.out.printf("%d | %s | %s | %.2f ₽ | %s%n",
                     room.getId(),
                     room.getRoomNumber(),
                     room.getType(),
-                    room.getPricePerNight());
+                    room.getPricePerNight(),
+                    room.getStatus());
         }
 
-        System.out.println("└────┴────────────┴──────────────────┴─────────────┘");
+        System.out.println("----------------------------------------");
         System.out.println("Всего номеров: " + rooms.size());
     }
 
@@ -67,7 +67,7 @@ public class RoomService {
         System.out.println("\nРЕДАКТИРОВАНИЕ НОМЕРА");
         System.out.println("───────────────────────");
 
-        printAllRooms();
+        AllRooms();
 
         System.out.print("\nВведите ID номера для редактирования: ");
         int id = scanner.nextInt();
@@ -123,7 +123,7 @@ public class RoomService {
         System.out.println("\n УДАЛЕНИЕ НОМЕРА");
         System.out.println("─────────────────");
 
-        printAllRooms();
+        AllRooms();
 
         System.out.print("\n Введите ID номера для удаления: ");
         int id = scanner.nextInt();

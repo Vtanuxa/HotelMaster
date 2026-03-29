@@ -20,6 +20,8 @@ public class Main {
                 case 1:
                     manageRooms();
                     break;
+                case 2:
+                    manageClients();
                 default:
                     System.out.println("Такая функция ещё не реализована");
             }
@@ -30,7 +32,7 @@ public class Main {
         System.out.println("\n╔═══════════════════════════════════════╗");
         System.out.println("║     🏨 СИСТЕМА УПРАВЛЕНИЯ ОТЕЛЕМ      ║");
         System.out.println("╠═══════════════════════════════════════╣");
-        System.out.println("║  1. 🛏️  Управление номерами           ║");
+        System.out.println("║  1. 🛏️ Управление номерами            ║");
         System.out.println("║  2. 👤 Управление клиентами           ║");
         System.out.println("║  3. 📅 Управление бронированием       ║");
         System.out.println("║  4. 🔍 Поиск                          ║");
@@ -57,7 +59,7 @@ public class Main {
             int choice = scanner.nextInt();
             switch (choice){
                 case 1:
-                    roomService.printAllRooms();
+                    roomService.AllRooms();
                     break;
                 case 2:
                     roomService.addRoom();
@@ -79,48 +81,53 @@ public class Main {
         }
     }
 
-//    private static void manageClients() {
-//        while (true) {
-//            System.out.println("\n╔═══════════════════════════════════════╗");
-//            System.out.println("║        👤 УПРАВЛЕНИЕ КЛИЕНТАМИ        ║");
-//            System.out.println("╠═══════════════════════════════════════╣");
-//            System.out.println("║  1. 📋 Показать всех клиентов          ║");
-//            System.out.println("║  2. ➕ Добавить клиента                ║");
-//            System.out.println("║  3. ✏️  Редактировать клиента          ║");
-//            System.out.println("║  4. ❌ Удалить клиента                 ║");
-//            System.out.println("║  5. 🔍 Найти по ID                     ║");
-//            System.out.println("║  6. 🔍 Найти по имени                  ║");
-//            System.out.println("║  0. 🔙 Назад                           ║");
-//            System.out.println("╚═══════════════════════════════════════╝");
-//            System.out.print("👉 Выберите опцию: ");
-//
-//            int choice = scanner.nextInt();
-//            scanner.nextLine();
-//
-//            switch (choice) {
-//                case 1:
-//                    clientService.printAllClients();
-//                    break;
-//                case 2:
-//                    break;
-//                case 3:
-//                    clientService.updateClient();
-//                    break;
-//                case 4:
-//                    clientService.deleteClient();
-//                    break;
-//                case 5:
-//                    clientService.findClientById();
-//                    break;
-//                case 6:
-//                    clientService.findClientsByName();
-//                    break;
-//                case 0:
-//                    System.out.println("🔙 Возврат в главное меню...");
-//                    return;
-//                default:
-//                    System.out.println("❌ Неверный выбор!");
-//            }
-//        }
-//    }
+    private static void manageClients() {
+        while (true) {
+            System.out.println("\n╔════════════════════════════════════════╗");
+            System.out.println("║        👤 УПРАВЛЕНИЕ КЛИЕНТАМИ         ║");
+            System.out.println("╠════════════════════════════════════════╣");
+            System.out.println("║  1. 📋 Показать всех клиентов          ║");
+            System.out.println("║  2. ➕ Добавить клиента                ║");
+            System.out.println("║  3. ✏️ Редактировать клиента           ║");
+            System.out.println("║  4. ❌ Удалить клиента                 ║");
+            System.out.println("║  5. 🔍 Найти по ID                     ║");
+            System.out.println("║  6. 🔍 Найти по email                  ║");
+            System.out.println("║  7. 🔍 Найти по телефону               ║");
+            System.out.println("║  0. 🔙 Назад                           ║");
+            System.out.println("╚════════════════════════════════════════╝");
+            System.out.print("👉 Выберите опцию: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    clientService.AllClients();
+                    break;
+                case 2:
+                    clientService.addClient();
+                    break;
+                case 3:
+                    clientService.updateClient();
+                    break;
+                case 4:
+                    clientService.deleteClient();
+                    break;
+                case 5:
+                    clientService.findClientById();
+                    break;
+                case 6:
+                    clientService.findClientByEmail();
+                    break;
+                case 7:
+                    clientService.findClientByPhone();
+                    break;
+                case 0:
+                    System.out.println("🔙 Возврат в главное меню...");
+                    return;
+                default:
+                    System.out.println("❌ Неверный выбор!");
+            }
+        }
+    }
 }

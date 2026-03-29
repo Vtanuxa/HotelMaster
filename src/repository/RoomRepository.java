@@ -15,6 +15,7 @@ public class RoomRepository {
     public Room save(Room room) {
 
         String saveRoom = "INSERT INTO rooms (room_number, type, status, price_per_night) VALUES (?, ?, ?, ?)";
+
         try (Connection connection = connection();
              PreparedStatement preparedStatement = connection.prepareStatement(saveRoom, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -84,9 +85,6 @@ public class RoomRepository {
         }
         return Optional.empty();
     }
-
-
-
 
     public List <Room> findAll() {
         List<Room> rooms = new ArrayList<>();

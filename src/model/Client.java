@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Client {
 
     private int id;
@@ -40,6 +42,10 @@ public class Client {
         return passport;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
@@ -54,5 +60,24 @@ public class Client {
 
     public void setPassport(String passport) {
         this.passport = passport;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "ID: %-3d | ФИО: %-20s | Телефон: %-12s | Email: %-20s | Паспорт: %-10s",
+                id, fullName, phone, email, passport);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return id == client.id && Objects.equals(fullName, client.fullName) && Objects.equals(phone, client.phone) && Objects.equals(email, client.email) && Objects.equals(passport, client.passport);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, fullName, phone, email, passport);
     }
 }
