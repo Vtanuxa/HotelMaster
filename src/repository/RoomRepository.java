@@ -37,7 +37,7 @@ public class RoomRepository {
         }
     }
 
-    public Optional <Room> findById(int id)  {
+    public Optional<Room> findById(int id) {
         String findRoomById = "SELECT * FROM rooms WHERE id = ?";
         try (Connection connection = connection();
              PreparedStatement preparedStatement = connection.prepareStatement(findRoomById)) {
@@ -86,7 +86,7 @@ public class RoomRepository {
         return Optional.empty();
     }
 
-    public List <Room> findAll() {
+    public List<Room> findAll() {
         List<Room> rooms = new ArrayList<>();
         String findAllRooms = "SELECT * FROM rooms";
 

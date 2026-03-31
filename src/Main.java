@@ -12,11 +12,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        while (true){
+        while (true) {
             printMainMenu();
             int choice = scanner.nextInt();
             scanner.nextLine();
-            switch (choice){
+            switch (choice) {
                 case 1:
                     manageRooms();
                     break;
@@ -57,7 +57,7 @@ public class Main {
             System.out.print("👉 Выберите опцию: ");
 
             int choice = scanner.nextInt();
-            switch (choice){
+            switch (choice) {
                 case 1:
                     roomService.AllRooms();
                     break;

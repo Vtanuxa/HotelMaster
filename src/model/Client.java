@@ -64,9 +64,7 @@ public class Client {
 
     @Override
     public String toString() {
-        return String.format(
-                "ID: %-3d | ФИО: %-20s | Телефон: %-12s | Email: %-20s | Паспорт: %-10s",
-                id, fullName, phone, email, passport);
+        return String.format("ID: %-3d | ФИО: %-20s | Телефон: %-12s | Email: %-20s | Паспорт: %-10s", id, fullName, phone, email, passport);
     }
 
     @Override

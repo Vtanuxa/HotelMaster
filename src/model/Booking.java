@@ -16,7 +16,7 @@ public class Booking {
     private String status; // Активно, Отменено, Завершено
 
     public Booking(Client client, Room room, LocalDate checkInDate, LocalDate checkOutDate, int guestCount) {
-        this.id =  nextID++;
+        this.id = nextID++;
         this.client = client;
         this.room = room;
         this.checkInDate = checkInDate;

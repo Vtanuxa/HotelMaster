@@ -50,11 +50,7 @@ public class ClientService {
         System.out.println("----------------------------------------");
 
         for (Client client : clients) {
-            System.out.printf("%d | %s | %s | %s%n",
-                    client.getId(),
-                    client.getFullName(),
-                    client.getPhone(),
-                    client.getPassport());
+            System.out.printf("%d | %s | %s | %s%n", client.getId(), client.getFullName(), client.getPhone(), client.getPassport());
         }
 
         System.out.println("----------------------------------------");

@@ -50,12 +50,7 @@ public class RoomService {
         System.out.println("----------------------------------------");
 
         for (Room room : rooms) {
-            System.out.printf("%d | %s | %s | %.2f ₽ | %s%n",
-                    room.getId(),
-                    room.getRoomNumber(),
-                    room.getType(),
-                    room.getPricePerNight(),
-                    room.getStatus());
+            System.out.printf("%d | %s | %s | %.2f ₽ | %s%n", room.getId(), room.getRoomNumber(), room.getType(), room.getPricePerNight(), room.getStatus());
         }
 
         System.out.println("----------------------------------------");

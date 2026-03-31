@@ -58,8 +58,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return String.format(
-                "ID: %-3d | Номер: %-4d | Тип: %-12s | Статус: %-8s | Цена: %8.2f руб \n", id, roomNumber, type, status, pricePerNight);
+        return String.format("ID: %-3d | Номер: %-4d | Тип: %-12s | Статус: %-8s | Цена: %8.2f руб \n", id, roomNumber, type, status, pricePerNight);
     }
 
     @Override
